@@ -1,7 +1,12 @@
+'use client';
+
 import Link from 'next/link';
+import { useState } from 'react';
 import Button from './ui/Button';
 
 const Navbar = () => {
+  const [isOpen, setIsOpen] = useState(false);
+
   const navLinks = [
     { name: 'About', href: '/about' },
     { name: 'Robots', href: '/robots' },
@@ -35,12 +40,42 @@ const Navbar = () => {
           <Button size="sm">Join Us</Button>
         </div>
 
-        {/* Mobile Toggle Placeholder */}
-        <button className="md:hidden text-white p-2">
+        {/* Mobile Toggle */}
+        <button 
+          className="md:hidden text-white p-2 focus:outline-none focus:ring-2 focus:ring-blue-500/50 rounded-lg transition-all"
+          onClick={() => setIsOpen(!isOpen)}
+          aria-label="Toggle menu"
+        >
           <svg className="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+            {isOpen ? (
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+            ) : (
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 6h16M4 12h16m-7 6h7" />
+            )}
           </svg>
         </button>
+      </div>
+
+      {/* Mobile Nav Overlay */}
+      <div className={`
+        md:hidden overflow-hidden transition-all duration-300 ease-in-out bg-[#0d1117] border-b border-white/5
+        ${isOpen ? 'max-h-[400px] opacity-100' : 'max-h-0 opacity-0'}
+      `}>
+        <div className="px-6 py-6 flex flex-col gap-4">
+          {navLinks.map((link) => (
+            <Link 
+              key={link.name} 
+              href={link.href}
+              className="text-lg font-semibold text-gray-300 hover:text-blue-400 transition-colors uppercase tracking-widest"
+              onClick={() => setIsOpen(false)}
+            >
+              {link.name}
+            </Link>
+          ))}
+          <div className="pt-4 border-t border-white/5">
+            <Button className="w-full" size="lg">Join Us</Button>
+          </div>
+        </div>
       </div>
     </nav>
   );
