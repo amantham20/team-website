@@ -28,7 +28,7 @@ export default function Home() {
               FRC Team 5509
             </div>
             <h1 className="text-6xl md:text-8xl font-black leading-tight text-white tracking-tighter">
-              DRIVING THE <span className="text-blue-600">FUTURE</span>
+              Building Robots <br/><span className="text-blue-600">Like a boss</span>
             </h1>
             <p className="text-gray-400 text-xl max-w-lg leading-relaxed">
               Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.

@@ -42,7 +42,7 @@ const Footer = () => {
           &copy; {new Date().getFullYear()} FRC Team 5509. All Rights Reserved.
         </p>
         <p className="text-gray-600 text-xs uppercase tracking-widest">
-          Built with speed and precision.
+          Measure Once Cut Twice.
         </p>
       </div>
     </footer>

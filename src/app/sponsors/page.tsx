@@ -27,53 +27,65 @@ export default function Sponsors() {
       </div>
 
       {/* Sponsor Grid */}
-      <Section className="space-y-32">
-        {/* Platinum */}
-        <div>
-          <div className="text-center mb-16">
-            <h2 className="text-2xl font-black uppercase tracking-[0.3em] text-blue-500 mb-2">Platinum Level</h2>
-            <div className="w-24 h-1 bg-blue-600 mx-auto" />
-          </div>
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
-            {platinumSponsors.map(s => (
-              <div key={s.name} className="bg-white/5 border border-white/10 rounded-2xl aspect-[3/1] flex items-center justify-center p-8 hover:border-blue-500/50 transition-colors">
-                <span className="text-2xl font-black text-gray-500 uppercase tracking-widest">{s.name}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Gold */}
-        <div>
-          <div className="text-center mb-16">
-            <h2 className="text-xl font-black uppercase tracking-[0.3em] text-yellow-500 mb-2">Gold Level</h2>
-            <div className="w-16 h-0.5 bg-yellow-500/50 mx-auto" />
-          </div>
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6">
-            {goldSponsors.map(s => (
-              <div key={s.name} className="bg-white/5 border border-white/5 rounded-xl aspect-[2/1] flex items-center justify-center p-6 grayscale hover:grayscale-0 transition-all">
-                <span className="text-lg font-bold text-gray-600 uppercase text-center">{s.name}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
-        {/* Silver & Bronze */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-20">
+      <Section>
+        <div className="space-y-48">
+          {/* Platinum */}
           <div>
-            <h2 className="text-lg font-black uppercase tracking-[0.3em] text-gray-400 mb-8 border-b border-white/5 pb-4">Silver Partners</h2>
-            <div className="grid grid-cols-2 gap-4">
-              {silverSponsors.map(s => (
-                <div key={s.name} className="text-gray-500 font-bold py-2 px-4 bg-white/[0.02] rounded border border-white/5">{s.name}</div>
+            <div className="text-center mb-16">
+              <h2 className="text-2xl font-black uppercase tracking-[0.3em] text-blue-500 mb-2">Platinum Level</h2>
+              <div className="w-24 h-1 bg-blue-600 mx-auto" />
+            </div>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+              {platinumSponsors.map(s => (
+                <div key={s.name} className="bg-white/5 border border-white/10 rounded-2xl aspect-[3/1] flex items-center justify-center p-8 hover:border-blue-500/50 transition-colors">
+                  <span className="text-2xl font-black text-gray-500 uppercase tracking-widest">{s.name}</span>
+                </div>
               ))}
             </div>
           </div>
+
+          {/* Gold */}
           <div>
-            <h2 className="text-lg font-black uppercase tracking-[0.3em] text-gray-600 mb-8 border-b border-white/5 pb-4">Bronze Level</h2>
-            <div className="grid grid-cols-2 gap-4">
-              {bronzeSponsors.map(s => (
-                <div key={s.name} className="text-gray-600 font-medium py-2 px-4">{s.name}</div>
+            <div className="text-center mb-16">
+              <h2 className="text-xl font-black uppercase tracking-[0.3em] text-yellow-500 mb-2">Gold Level</h2>
+              <div className="w-16 h-0.5 bg-yellow-500/50 mx-auto" />
+            </div>
+            <div className="flex flex-wrap justify-center gap-6">
+              {goldSponsors.map(s => (
+                <div key={s.name} className="bg-white/5 border border-white/5 rounded-xl aspect-[2/1] w-full max-w-[280px] flex items-center justify-center p-6 grayscale hover:grayscale-0 transition-all">
+                  <span className="text-lg font-bold text-gray-600 uppercase text-center">{s.name}</span>
+                </div>
               ))}
+            </div>
+          </div>
+
+          {/* Silver & Bronze */}
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-20">
+            <div>
+              <div className="flex items-center gap-4 mb-8">
+                <h2 className="text-lg font-black uppercase tracking-[0.3em] text-gray-400 whitespace-nowrap">Silver Partners</h2>
+                <div className="h-px bg-white/10 flex-grow" />
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {silverSponsors.map(s => (
+                  <div key={s.name} className="text-gray-300 font-bold py-3 px-6 bg-white/[0.03] rounded-lg border border-white/10 flex items-center justify-center text-center">
+                    {s.name}
+                  </div>
+                ))}
+              </div>
+            </div>
+            <div>
+              <div className="flex items-center gap-4 mb-8">
+                <h2 className="text-lg font-black uppercase tracking-[0.3em] text-orange-800/80 whitespace-nowrap">Bronze Level</h2>
+                <div className="h-px bg-orange-900/20 flex-grow" />
+              </div>
+              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+                {bronzeSponsors.map(s => (
+                  <div key={s.name} className="text-orange-200/50 font-bold py-3 px-6 bg-orange-900/[0.05] rounded-lg border border-orange-900/10 flex items-center justify-center text-center">
+                    {s.name}
+                  </div>
+                ))}
+              </div>
             </div>
           </div>
         </div>
